@@ -1,10 +1,25 @@
 import React from 'react';
 import tripsData from '../tripsData';
+import { NavLink } from 'react-router-dom';
+import Nav from './Nav';
+import { useParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 function TripDetail() {
-  const trip = tripsData[0];
+
+  const {tripId} = useParams();
+  console.log(tripId);
+  const trip = tripsData.find((item) => item.id=== +tripId);
+  if (!trip) {
+    return <Navigate to="/" />;
+  }
+
+
+  // const trip = tripsData[0];
   return (
     <div className="modal-dialog modal-xl">
+      <Nav />
+      
       <div className="modal-content">
         <div className="modal-body text-center pb-5">
           <div className="container">

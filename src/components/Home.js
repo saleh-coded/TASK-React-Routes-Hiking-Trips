@@ -1,8 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Nav from './Nav';
 
 function Home() {
   return (
     <header className="masthead bg-primary text-white text-center">
+      <Nav />
       <div className="container d-flex align-items-center flex-column">
         <h1 className="masthead-heading text-uppercase mb-0">
           Welcome To Hike
@@ -21,5 +24,6 @@ function Home() {
     </header>
   );
 }
+
 
 export default Home;
